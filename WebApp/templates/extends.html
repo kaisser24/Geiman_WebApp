@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% set active_page = "home" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+
+    {% endif %}
+    <body class="{% if current_user.is_authenticated %}home2{% else %}home{% endif %}">
+        {% if not current_user.is_authenticated %}
+            <div class="overlay">
+                <h2 class="home">Welcome to Shoes R' Us!</h2>
+                <p class="home">You are not logged in. Please <a href="/create_user">Create User</a> or <a href="/login">Login</a> if you don't have an account yet.</p>
+            </div>
+        {% endif %}
+    </body>
+{% endblock %}

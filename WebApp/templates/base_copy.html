@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../static/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="left">
+            <li><a href="/"><img src="../static/WCU_Logo.png" height="50"></a></li>
+        </ul>
+        <ul class="right">
+            <li><a {% if active_page == 'create_user' %}class="active"{% endif %} href="/create_user">Create User</a></li>
+            <li><a {% if active_page == 'manage_users' %}class="active"{% endif %} href="/manage_users">Manage Users</a></li>
+            <li><a {% if active_page == 'view_data' %}class="active"{% endif %} href="/view_data">View Data</a></li>
+            <li><a {% if active_page == 'get_data' %}class="active"{% endif %} href="/get_data">Get Data</a></li>
+            <li><a class="logout" href="/">Logout</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

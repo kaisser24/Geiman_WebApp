@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% set active_page = "view_data" %}
+{% block title %}View Data{% endblock %}
+
+{% block content %}
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+
+    <body>
+        <br>
+        <form method="POST">
+            <input type="date" id="date" name="date">
+            <input type="submit" value="Submit">
+        </form>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Timestamp</th>
+                <th>Decibel Level</th>
+            </tr>
+            {% for shot in shots %}
+                <tr>
+                    <td>{{ shot.shot_id }}</td>
+                    <td>{{ shot.time_stamp }}</td>
+                    <td>{{ shot.dec_level }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+{% endblock %}
+

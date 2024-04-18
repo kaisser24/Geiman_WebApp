@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% set active_page = "get_data" %}
+{% block title %}Get Data{% endblock %}
+
+{% block content %}
+<body>
+        <h2>Data Recieved</h2>
+        {% if fetchData %}
+        <ul>
+            {% for data_item in fetchData %}
+                <li>{{ data_item }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No data Recieved</p>
+        {% endif %}
+    </body>
+{% endblock %}

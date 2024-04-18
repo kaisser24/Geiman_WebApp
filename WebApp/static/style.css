@@ -1,0 +1,229 @@
+body {
+    background-color: white;
+    margin: 0;
+    color: black;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 70px); /* Adjust for the height of the navbar */
+}
+
+.container2 {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 70px); /* Adjust for the height of the navbar */
+}
+
+.container3 {
+    display: flex;
+    height: calc(100vh - 70px); /* Adjust for the height of the navbar */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    user-select: none;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust columns as needed */
+    grid-gap: 20px; /* Adjust gap between grid items */
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust spacing between grids */
+}
+
+
+.mp3-player {
+    text-align: center; /* Center the MP3 player horizontally */
+    width: 100%; /* Ensure the MP3 player occupies the full width of its container */
+    margin-top: 20px; /* Adjust spacing between image grid and MP3 player */
+}
+
+.mp3-player audio {
+    width: 90%; /* Set the width of the audio player */
+    margin: 0 auto; /* Center the audio player horizontally */
+    display: block; /* Ensure the audio player is displayed as a block element */
+}
+
+
+.leftPage2, .rightPage2 {
+    flex: 1; /* Take up all available space */
+    padding: 0 20px; /* Adjust as needed */
+}
+
+.leftPage2 img,
+.rightPage2 img {
+    max-width: 100%; /* Set maximum width to 100% of their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.middlePage2 {
+    flex: 1; /* Take up all available space */
+    padding: 0 20px; /* Adjust as needed */
+    background-color: #cd2c3c;
+    height: 100%; /* Occupy full height of the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.middlePage2 h2 {
+    text-align: center; /* Center the headings */
+    color: white;
+}
+
+.middlePage2 p {
+    text-align: justify; /* Justify the paragraphs */
+}
+
+.leftPage {
+    flex: 1; /* Take up all available space */
+    padding: 0 20px; /* Adjust as needed */
+    max-width: 50%; /* Set maximum width to 50% */
+}
+
+.leftPage img {
+    width: 100%; /* Ensure the image takes up 100% of the width of its container */
+}
+
+.rightPage {
+    flex: 1; /* Take up all available space */
+    padding: 0 20px; /* Adjust as needed */
+    max-width: 50%; /* Set maximum width to 50% */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.rightPage h1 {
+    width: 100%; /* Ensure the text takes up 100% of the width of its container */
+    text-align: center; /* Center the text horizontally */
+    font-family: 'LemonJelly', sans-serif; /* Use the custom font family */
+    font-size: 500%;
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'LemonJelly';
+    src: url('LemonJelly.ttf') format('truetype');
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+}
+
+a.tab {
+    color: #992934;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+nav {
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    font-family: 'Aileron', sans-serif;
+    font-weight: bold;
+    position: fixed; /* Fix the navbar position */
+    top: 0; /* Position the navbar at the top of the viewport */
+    width: 100%; /* Set the width to 100% of the viewport */
+    z-index: 1000; /* Ensure the navbar is on top of other content */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 16px;
+    color: black;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
+nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    padding: 14px 0;
+}
+
+nav li a.active::after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    bottom: auto;
+    width: auto;
+    background: white;
+}
+
+nav ul.center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul.center li {
+    position: relative;
+}
+
+nav ul.center li::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Adjust the distance between text and underline */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Set the height of the underline */
+    background-color: #cd2c3c; /* Set the color of the underline */
+}
+
+nav li a:hover:not(.active) {
+    background-color: transparent !important;
+    color: white;
+}
+
+nav li a.logout {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-right: 5%;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav li a.logout:hover {
+    background-color: #333;
+}
+
+nav ul.left{
+    margin-left: 1%;
+}
+
+.flipped-image {
+    transform: scaleX(-1);
+}
+
